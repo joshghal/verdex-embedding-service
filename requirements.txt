@@ -1,4 +1,9 @@
+# Core API
 fastapi==0.110.0
 uvicorn[standard]==0.29.0
-sentence-transformers==2.6.1
-torch>=2.0.0
+
+# ML - ONNX Runtime is 10x lighter than PyTorch (~50MB vs ~500MB+)
+onnxruntime==1.17.0
+tokenizers==0.15.0
+huggingface-hub==0.20.0
+numpy==1.26.0
