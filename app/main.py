@@ -23,7 +23,8 @@ app = FastAPI(
 )
 
 # Xenova models have guaranteed ONNX exports
-MODEL_ID = "Xenova/all-MiniLM-L6-v2"
+# Using bge-small-en-v1.5 to match existing Pinecone vectors
+MODEL_ID = "Xenova/bge-small-en-v1.5"
 
 session: ort.InferenceSession = None
 tokenizer: Tokenizer = None

@@ -13,10 +13,10 @@ ENV HF_HOME=/app/.cache/huggingface
 COPY requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Pre-download Xenova ONNX model during build
+# Pre-download Xenova ONNX model during build (bge-small-en-v1.5 to match Pinecone)
 RUN python -c "from huggingface_hub import hf_hub_download; \
-    hf_hub_download('Xenova/all-MiniLM-L6-v2', 'onnx/model.onnx'); \
-    hf_hub_download('Xenova/all-MiniLM-L6-v2', 'tokenizer.json')"
+    hf_hub_download('Xenova/bge-small-en-v1.5', 'onnx/model.onnx'); \
+    hf_hub_download('Xenova/bge-small-en-v1.5', 'tokenizer.json')"
 
 # Copy app
 COPY app ./app
